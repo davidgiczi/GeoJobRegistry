@@ -1,2 +1,2 @@
 # GeoJobRegistry
-It's a job registry for geodesy web project that can run Tomcat.
+It's a registry for geodesy jobs web project that can run Tomcat.
