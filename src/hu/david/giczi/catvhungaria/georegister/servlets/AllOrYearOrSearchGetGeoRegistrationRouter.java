@@ -46,7 +46,11 @@ public class AllOrYearOrSearchGetGeoRegistrationRouter extends HttpServlet {
 
 				request.getRequestDispatcher("search").forward(request, response);
 			}
-
+			else {
+				request.getRequestDispatcher("geostart.jsp").forward(request, response);
+			}
+				
+				
 		} catch (IllegalStateException e) {
 
 			request.getRequestDispatcher("geostart.jsp").forward(request, response);
