@@ -182,7 +182,10 @@ public class GeoJob implements Serializable, Comparable<GeoJob> {
 		String[] data = date.split("\\s+");
 		
 		try {
-			return new SimpleDateFormat("yyyy-MM-dd").parse(data[0]).getTime();
+			if(data != null && data.length != 0) {
+				return new SimpleDateFormat("yyyy-MM-dd").parse(data[0]).getTime();
+			}
+			
 		} catch (ParseException e) {
 			
 			e.printStackTrace();

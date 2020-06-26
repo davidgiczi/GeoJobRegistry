@@ -7,7 +7,7 @@ public class InputDataValidator {
 		
 		
 		if(!inputGeoReg.getSettlementNameOfWork().isEmpty() && !inputGeoReg.getPlaceOfWork().isEmpty()
-				&& !inputGeoReg.getMethod().isEmpty() && !inputGeoReg.getDate().isEmpty()){
+				&& !inputGeoReg.getMethod().isEmpty() && !inputGeoReg.getDate().isEmpty() && GeoJob.parseGeoJobDate(inputGeoReg.getDate()) != 0L){
 					
 					return true;
 				}
