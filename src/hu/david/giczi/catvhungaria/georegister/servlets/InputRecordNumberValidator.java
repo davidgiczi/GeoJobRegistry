@@ -48,6 +48,12 @@ public class InputRecordNumberValidator extends HttpServlet {
 
 			String requestInstruction = (String) request.getSession().getAttribute("requestInstruction");
 			String searchedData = (String) request.getSession().getAttribute("searchedData");
+			
+			if( requestInstruction == null && searchedData == null ) {
+				
+				request.getRequestDispatcher("geostart.jsp").forward(request, response);
+				return;
+			}
 
 			List<GeoJob> geoJobStore = new GeoJobDAOImpl().getGeoJobList(requestInstruction, searchedData);
 
