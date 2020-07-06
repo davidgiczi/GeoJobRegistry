@@ -15,7 +15,7 @@ public class FolderManager {
 	public FolderManager(String settlementFolderName, String place_method_date) {
 		
 		this.settlementFolderName = settlementFolderName;
-		this.place_method_date = place_method_date;
+		this.place_method_date = place_method_date.replace(" ", "_");
 	}
 	
 		
