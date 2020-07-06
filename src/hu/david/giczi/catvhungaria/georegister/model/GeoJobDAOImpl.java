@@ -129,8 +129,6 @@ public class GeoJobDAOImpl implements GeoJobDAO {
 		
 	List<GeoRegistration> results = query.getResultList();
 	
-	Collections.sort(results);
-	
 	em.close();
 	emf.close();
 		

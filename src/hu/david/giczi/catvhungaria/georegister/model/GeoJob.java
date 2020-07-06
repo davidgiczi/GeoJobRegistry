@@ -172,9 +172,8 @@ public class GeoJob implements Serializable, Comparable<GeoJob> {
 	public int compareTo(GeoJob o) {
 			
 		
-		return parseGeoJobDate(this.date) < parseGeoJobDate(o.getDate()) ?
-				-1 : parseGeoJobDate(this.date) == parseGeoJobDate(o.getDate()) ? 0 : 1;
-		
+	return parseGeoJobDate(this.date) <=  parseGeoJobDate(o.getDate()) ? -1 : 1;
+			
 	}
 	
 	public static long parseGeoJobDate(String date)  {
