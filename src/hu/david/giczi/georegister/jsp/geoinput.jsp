@@ -21,13 +21,13 @@ Munka dátuma:<br> <textarea  name="date" cols="51" rows="5"></textarea><br>
 Megbízó:<br> <textarea  name="manager" cols="51" rows="5"></textarea><br>
 Beruházó:<br> <textarea  name="investor" cols="51" rows="5"></textarea><br>
 Megjegyzés:<br> <textarea  name="comment" cols="51" rows="5"></textarea><br><br>
-Befejezve: <input type="checkbox" value="true" name="ready" /><hr><br>
+Befejezve: <input type="checkbox" value="true" name="ready" style="cursor: pointer"/><hr><br>
          
-<input type="submit" value="Küldés" style="float:left" />
+<input type="submit" value="Küldés" style="float:left;cursor: pointer" />
 
 </form>
 
-<a href="geostart.jsp" style="float:right"><button>Vissza</button></a>
+<a href="geostart.jsp" style="float:right;"><button style="cursor: pointer">Vissza</button></a>
 
 <input type="hidden" value="${msg}" id="msg">
 

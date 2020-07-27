@@ -24,19 +24,19 @@ Beruházó:<br> <textarea  name="investor" cols="51" rows="5">${geojob.investorC
 Megjegyzés:<br> <textarea  name="comment" cols="51" rows="5">${geojob.comment}</textarea><br><br> 
 
 <c:if test="${geojob.isReady}">
-Befejezve: <input type="checkbox" value="true" name="ready" checked="checked"/><hr><br>
+Befejezve: <input type="checkbox" value="true" name="ready" checked="checked" style="cursor: pointer"/><hr><br>
 </c:if>
 
 <c:if test="${!geojob.isReady}">
-Befejezve: <input type="checkbox" value="true" name="ready"/><hr><br>
+Befejezve: <input type="checkbox" value="true" name="ready" style="cursor: pointer"/><hr><br>
 </c:if>
          
-<input type="submit" value="Módosítás" style="float:left" />
+<input type="submit" value="Módosítás" style="float:left;cursor: pointer"/>
 
 </form>
 
 <form action="clearSession" accept-charset="UTF-8">
-<input type="submit" style="float: right;" value="Mégsem">
+<input type="submit" style="float: right;cursor: pointer" value="Mégsem">
 </form>
 
 

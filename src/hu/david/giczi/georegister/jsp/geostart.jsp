@@ -20,12 +20,15 @@
 															 <span style="color: #DB4437;">e</span>
 															 Maps&nbsp;&nbsp;&nbsp;</a>
 <a id="tr" style="float: left ;color: white;cursor: pointer">Transzformáció&nbsp;&nbsp;&nbsp;</a>
-<a id="back" style="float: left ;color: white;cursor: pointer">Vissza&nbsp;&nbsp;&nbsp;</a>
+<a id="calendar" style="float: left ;color: white;cursor: pointer">Naptár&nbsp;&nbsp;&nbsp;</a>
+<a id="setup" style="float: left ;color: white;cursor: pointer">Beállítások&nbsp;&nbsp;&nbsp;</a>
+
 
 
 
 <br>
 <hr>
+<button id="back" style="float: right;cursor: pointer">Kilépés</button>
 
 <form id="init" action="InitGeoList" accept-charset="UTF-8"></form>
 
@@ -33,6 +36,11 @@
 <input  type="hidden" name="user" value="david.giczi">
 <input  type="hidden" name="pass" value="localhero">
 </form>
+
+<form id="open" action="openMonth" accept-charset="UTF-8"></form>
+<form id="gosetup" action="goSetup" accept-charset="UTF-8"></form>
+<input id="msg" type="hidden" value="${missedPdf}">
+
 <script src="geoscript/geostart.js" charset="UTF-8"></script>
 </body>
 </html>

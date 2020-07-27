@@ -10,25 +10,25 @@
 <body style="background-color:#ffc87a;">
 
 <h1 align="center" style="color:white">Listázás/Keresés</h1><hr><br>
-<a href="geostart.jsp" style="float:right"><button>Vissza</button></a>
+<a href="geostart.jsp" style="float:right"><button style="cursor: pointer">Vissza</button></a>
 
 
 
 <form action="preRouter" accept-charset="UTF-8">
    		 
-   		 <select name="year">
+   		 <select name="year" style="cursor: pointer">
 	
 		 <option value="all">Összes</option>	
 		<c:forEach items="${years}" var="year">
-   		 <option value="${year}">${year}.</option>
+   		 <option value="${year}" style="cursor: pointer">${year}.</option>
 		</c:forEach>
 		</select>
-   		<input type="submit" value="évi munkák mutatása" />
+   		<input type="submit" value="évi munkák mutatása" style="cursor: pointer"/>
 		</form><br>
 
 <form action="search" accept-charset="UTF-8">
 <input type="text" name="search"/>
-<input type="submit" value="Keresés" />
+<input type="submit" value="Keresés" style="cursor: pointer"/>
 
 </form>
 

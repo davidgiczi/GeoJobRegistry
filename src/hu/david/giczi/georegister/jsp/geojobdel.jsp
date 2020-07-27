@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -21,11 +21,14 @@ th, td {
 </head>
 <body style="background-color: #ffc87a;">
 
-<h1 align="center" style="color:white">Tényleg törölni akarod a kiválasztott rekordot?</h1><hr><br>
+	<h1 align="center" style="color: white">Biztosan törölni akarod a
+		kiválasztott rekordot?</h1>
+	<hr>
+	<br>
 
 
 
-<table style="width: 100%">
+	<table style="width: 100%">
 		<tr>
 			<th style="background-color: WhiteSmoke;">Sorszám</th>
 			<th style="background-color: WhiteSmoke;">Településnév</th>
@@ -43,50 +46,45 @@ th, td {
 			<th style="background-color: WhiteSmoke;">E-mail</th>
 		</tr>
 
-<tr>
+		<tr>
 
 
-						<td>1</td>
-						<td>${geojob.settlementNameOfWork}</td>
-						<td>${geojob.placeOfWork}</td>
-						<td>${geojob.method}</td>
-						<td>${geojob.date}</td>
-						<td>${geojob.investmentManager}</td>
-						<td>${geojob.investorCompany}</td>
-						<td>${geojob.comment}</td>
-						<td>${geojob.measTime}</td>
-						<td>${geojob.measPointNumber}</td>
-						<td>${geojob.measDist}</td>
-						
-						
-						<c:if test="${geojob.isReady}">
-						<td>Igen</td>
-						<td><form
-								action="showmail" accept-charset="UTF-8">
-								<input type="file" value="" name="url" size="5"><br>
-								<br> <input type="submit" value="Mutat">
-							</form></td>
-					</c:if>
-					<c:if test="${!geojob.isReady}">
-						<td>Nem</td>
-						<td><form action="showmail" accept-charset="UTF-8">
-								<input type="file" value="" name="url" size="5"><br>
-								<br> <input type="submit" value="Mutat">
-							</form></td>
-					</c:if>
-						
-</tr>
+			<td>1</td>
+			<td>${geojob.settlementNameOfWork}</td>
+			<td>${geojob.placeOfWork}</td>
+			<td>${geojob.method}</td>
+			<td>${geojob.date}</td>
+			<td>${geojob.investmentManager}</td>
+			<td>${geojob.investorCompany}</td>
+			<td>${geojob.comment}</td>
+			<td>${geojob.measTime}</td>
+			<td>${geojob.measPointNumber}</td>
+			<td>${geojob.measDist}</td>
 
-</table><br>
-<form method="POST" action="deleteGeoJob" accept-charset="UTF-8">
-<input type="hidden" value="${geojob.id}" name="geojobid">
 
-<input type="submit" value="Törlés">
-</form>
+			<c:if test="${geojob.isReady}">
+				<td>Igen</td>
+			</c:if>
+			<c:if test="${!geojob.isReady}">
+				<td>Nem</td>
+			</c:if>
+			<td><form action="lookup" accept-charset="UTF-8">
+					<input type="submit" value="Tallózás..." style="cursor: pointer">
+				</form></td>
 
-<form action="clearSession" accept-charset="UTF-8">
-<input type="submit" value="Mégsem" style="float: right;">
-</form>
+
+		</tr>
+
+	</table>
+	<br>
+	<form method="POST" action="deleteGeoJob" accept-charset="UTF-8">
+		<input type="hidden" value="${geojob.id}" name="geojobid"> <input
+			type="submit" value="Törlés" style="cursor: pointer">
+	</form>
+
+	<form action="clearSession" accept-charset="UTF-8">
+		<input type="submit" value="Mégsem" style="float: right;cursor: pointer">
+	</form>
 
 
 </body>

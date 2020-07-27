@@ -20,7 +20,7 @@ body {text-align: center;}
 
 		<c:forEach begin="0" end="10" varStatus="i">
 
-			<select name="labels">
+			<select name="labels" style="cursor: pointer">
 
 				<option value="-1">-</option>
 
@@ -112,7 +112,7 @@ body {text-align: center;}
 		<br>
 		<br> 
 
-	<input type="submit" id="allBtn" value="Összes munka mentése">
+	<input type="submit" id="allBtn" value="Összes munka mentése" style="cursor: pointer">
 
 	
 	<br>
@@ -120,13 +120,13 @@ body {text-align: center;}
 	<br>
 
 
-	<select name="startyear">
+	<select name="startyear" style="cursor: pointer">
 		<c:forEach items="${years}" var="year">
 			<option value="${year}">${year}</option>
 		</c:forEach>
 	</select> -
 
-	<select name="startmonth">
+	<select name="startmonth" style="cursor: pointer">
 
 
 		<c:forEach begin="1" end="12" varStatus="i">
@@ -134,20 +134,20 @@ body {text-align: center;}
 		</c:forEach>
 	</select> -
 
-	<select name="startday">
+	<select name="startday" style="cursor: pointer">
 
 		<c:forEach begin="1" end="31" varStatus="i">
 			<option value="${i.index}">${i.index}</option>
 		</c:forEach>
 	</select> <h4 style="color: white;">kezdő/végdátum megadása</h4>
 	
-	<select name="stopyear">
+	<select name="stopyear" style="cursor: pointer">
 		<c:forEach items="${years}" var="year">
 			<option value="${year}">${year}</option>
 		</c:forEach>
 	</select> -
 
-	<select name="stopmonth">
+	<select name="stopmonth" style="cursor: pointer">
 
 
 		<c:forEach begin="1" end="12" varStatus="i">
@@ -155,7 +155,7 @@ body {text-align: center;}
 		</c:forEach>
 	</select> -
 
-	<select name="stopday">
+	<select name="stopday" style="cursor: pointer">
 
 		<c:forEach begin="1" end="31" varStatus="i">
 			<option value="${i.index}">${i.index}</option>
@@ -167,14 +167,14 @@ body {text-align: center;}
 
 <h4 style="color: white;">kezdő/végdátum megadása</h4>
 
-<button id="byYearBtn">Munkák mentése dátum alapján</button><br><br><br>
+<button id="byYearBtn" style="cursor: pointer">Munkák mentése dátum alapján</button><br><br><br>
 
 <form action="loadGeoRegs" accept-charset="UTF-8">
-<input type="submit" value="Munkák beolvasása">
+<input type="submit" value="Munkák beolvasása" style="cursor: pointer">
 </form>
 <hr>
 
-<a href="geostart.jsp" style="float: right"><button>Vissza</button></a>
+<a href="geostart.jsp" style="float: right;"><button style="cursor: pointer">Vissza</button></a>
 
 <input type="hidden" value="${savedjobs}" id="saved">
 <input type="hidden" value="${validjobs}" id="valid">

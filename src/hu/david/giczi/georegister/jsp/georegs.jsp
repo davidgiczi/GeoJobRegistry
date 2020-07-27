@@ -83,17 +83,15 @@ th, td {
 				<c:if test="${reg.isReady}">
 					<td style="background-color: #87e187;">Igen</td>
 					<td style="background-color: #87e187;"><form
-							action="showmail" accept-charset="UTF-8">
-							<input type="file" value="" name="url" size="5"><br>
-							<br> <input type="submit" value="Mutat">
+							action="lookup" accept-charset="UTF-8">
+							<input type="submit" value="Tallózás..." style="cursor: pointer">
 						</form></td>
 				</c:if>
 				<c:if test="${!reg.isReady}">
 					<td style="background-color: WhiteSmoke;">Nem</td>
 					<td style="background-color: WhiteSmoke;"><form
-							action="showmail" accept-charset="UTF-8">
-							<input type="file" value="" name="url" size="5"><br>
-							<br> <input type="submit" value="Mutat">
+							action="lookup" accept-charset="UTF-8">
+							<input type="submit" value="Tallózás..." style="cursor: pointer">
 						</form></td>
 				</c:if>
 
@@ -141,16 +139,14 @@ th, td {
 					<c:if test="${reg.isReady}">
 						<td style="background-color: #87e187;">Igen</td>
 						<td style="background-color: #87e187;"><form
-								action="showmail" accept-charset="UTF-8">
-								<input type="file" value="" name="url" size="5"><br>
-								<br> <input type="submit" value="Mutat">
+								action="lookup" accept-charset="UTF-8">
+								<input type="submit" value="Tallózás..." style="cursor: pointer">
 							</form></td>
 					</c:if>
 					<c:if test="${!reg.isReady}">
 						<td>Nem</td>
-						<td><form action="showmail" accept-charset="UTF-8">
-								<input type="file" value="" name="url" size="5"><br>
-								<br> <input type="submit" value="Mutat">
+						<td><form action="lookup" accept-charset="UTF-8">
+								<input type="submit" value="Tallózás..." style="cursor: pointer">
 							</form></td>
 					</c:if>
 
@@ -167,24 +163,24 @@ th, td {
 	<h3 style="color: white">Add meg a rekord sorszámát:</h3>
 	<input type="text" name="recordNumber" size="1">
 	<input type="hidden" value="modify" name="operation"> 
-	<input type="submit" value="Módosítás" />
+	<input type="submit" value="Módosítás" style="cursor: pointer"/>
 	</form><br>
 	
 	<form method="POST" action="validator">
 	<input type="text" name="recordNumber" size="1">
 	<input type="hidden" value="del" name="operation"> 	
-	<input type="submit" value="Törlés" />
+	<input type="submit" value="Törlés" style="cursor: pointer"/>
 	</form><br>
 	
 	<form method="POST" action="validator">
 	<input type="text" name="recordNumber" size="1">
 	<input type="hidden" value="createcoord" name="operation"> 
-	<input type="submit" value="Koordináta-jegyzék készítés" />	
+	<input type="submit" value="Koordináta-jegyzék készítés" style="cursor: pointer"/>	
 	</form><br><hr>
 
  	<form id="backForm" action="InitGeoList" accept-charset="UTF-8"></form> 
 
-	 <button onclick="goBackToGeoList()" style="float: right">Vissza</button>
+	 <button onclick="goBackToGeoList()" style="float: right;cursor: pointer">Vissza</button>
 
 	<input type="hidden" value="${msg}" id="invalid">
 </body>
