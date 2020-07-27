@@ -33,23 +33,23 @@ public class ModifyGeoRegistration extends HttpServlet {
 		
 		Boolean isReady = regParams.get("ready") == null ? false : true;
 		Long geoJobId = Long.parseLong(regParams.get("geojobid")[0]);
+		GeoJobDAOImpl service =	new GeoJobDAOImpl();
 		
 		GeoRegistration modifiedGeoReg = new GeoRegistration(
 				geoJobId,
-				regParams.get("settlement")[0],
-				regParams.get("place")[0],
-				regParams.get("method")[0],
-				regParams.get("date")[0],
-				regParams.get("manager")[0],
-				regParams.get("investor")[0],
-				regParams.get("comment")[0],
+				service.cutInputString(regParams.get("settlement")[0]),
+				service.cutInputString(regParams.get("place")[0]),
+				service.cutInputString(regParams.get("method")[0]),
+				service.cutInputString(regParams.get("date")[0]),
+				service.cutInputString(regParams.get("manager")[0]),
+				service.cutInputString(regParams.get("investor")[0]),
+				service.cutInputString(regParams.get("comment")[0]),
 				isReady);
 		
 			
 	if(InputDataValidator.isValidInputGeoRegistration(modifiedGeoReg)) {
 		
 		GeoJob modifiedGeoJob = new GeoJob(modifiedGeoReg);
-		GeoJobDAOImpl service =	new GeoJobDAOImpl();
 		service.modify(modifiedGeoJob);
 		service.createWorkFolders(modifiedGeoJob.getSettlementNameOfWork(), modifiedGeoJob.getPlaceOfWork() + "_"
 				+ modifiedGeoJob.getMethod() + "_" + modifiedGeoJob.getDate());	

@@ -1,11 +1,15 @@
 package hu.david.giczi.catvhungaria.georegister.servlets;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import hu.david.giczi.catvhungaria.georegister.model.GeoJobPropertyStore;
 
 @WebServlet("/showmail")
 public class ShowEmail extends HttpServlet {
@@ -21,18 +25,20 @@ public class ShowEmail extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-
-		String fileURL = request.getParameter("url");
 		
+		@SuppressWarnings (value="unchecked")
+		List<String> urlStore = (List<String>) request.getSession().getAttribute("fileURLStore");
+		
+		if( !urlStore.isEmpty() && urlStore.get(0).endsWith(".eml")) {
+		
+		String fileURL = urlStore.get(0);
 
-		if (!"".equals(fileURL)) {
+		Runtime run = Runtime.getRuntime();
 
-			Runtime run = Runtime.getRuntime();
-
-			run.exec("C:\\Program Files (x86)\\Mozilla Thunderbird\\thunderbird " + fileURL);
+		run.exec(GeoJobPropertyStore.URL3 + fileURL);
 
 		}
-
+		
 		request.getRequestDispatcher("clearSession").forward(request, response);
 
 	}

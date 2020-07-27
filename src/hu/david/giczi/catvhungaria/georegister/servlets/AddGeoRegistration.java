@@ -40,7 +40,7 @@ public class AddGeoRegistration extends HttpServlet {
 		if (InputDataValidator.isValidInputGeoRegistration(geo)) {
 
 			geoService.addGeoReg(geo);
-
+			
 			geoService.createWorkFolders(geo.getSettlementNameOfWork(),
 					geo.getPlaceOfWork() + "_" + geo.getMethod() + "_" + geo.getDate());
 

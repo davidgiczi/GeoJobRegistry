@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import hu.david.giczi.catvhungaria.georegister.model.GeoJob;
 import hu.david.giczi.catvhungaria.georegister.model.GeoJobDAOImpl;
+import hu.david.giczi.catvhungaria.georegister.model.GeoJobPropertyStore;
 import hu.david.giczi.catvhungaria.georegister.model.InputDataValidator;
 import hu.david.giczi.catvhungaria.georegister.model.MeasuringReport;
 
@@ -105,9 +106,19 @@ public class InputRecordNumberValidator extends HttpServlet {
 		
 		if("createcoord".equals(operation)) {
 			
-			if(MeasuringReport.createCoordReport( "\\\\10.0.1.74\\Tervezés\\GEO_Dávid\\",
-													geoJob.getSettlementNameOfWork(),
-					geoJob.getPlaceOfWork() + "_" + geoJob.getMethod() + "_"+geoJob.getDate())) {
+			String settlement = geoJob.getSettlementNameOfWork().replace(" ", "_");
+			String place_method_date = geoJob.getPlaceOfWork().replace(" ", "_") + 
+					"_" + geoJob.getMethod().replace(" ", "_") + "_"+geoJob.getDate();
+			
+			if(MeasuringReport.createCoordReport(GeoJobPropertyStore.URL1, settlement, place_method_date)) {
+				
+				try {
+					Runtime.getRuntime().exec("notepad.exe " 
+				+ GeoJobPropertyStore.URL1 + settlement + "\\" + place_method_date + "\\állományok\\coords_kit.txt");
+				} catch (IOException e) {
+					
+					e.printStackTrace();
+				}
 				
 				request.getSession().setAttribute("createcoord", true);
 				
@@ -122,6 +133,7 @@ public class InputRecordNumberValidator extends HttpServlet {
 		
 	}
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

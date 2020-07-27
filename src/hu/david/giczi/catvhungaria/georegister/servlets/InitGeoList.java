@@ -36,7 +36,7 @@ public class InitGeoList extends HttpServlet {
 			
 			if(isAllEmpty != null) {
 				
-				request.setAttribute("emptylist", "Semmelyik");
+				request.setAttribute("emptylist", "Semelyik");
 			}
 			if(isYearEmpty != null) {
 				

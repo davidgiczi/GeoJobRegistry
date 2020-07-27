@@ -7,13 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import hu.david.giczi.catvhungaria.georegister.model.GeoJobPropertyStore;
 
-@WebServlet("/clearSession")
-public class ClearSession extends HttpServlet {
+
+@WebServlet("/goSetup")
+public class GoSetup extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
     
-    public ClearSession() {
+    public GoSetup() {
         super();
        
     }
@@ -24,14 +25,22 @@ public class ClearSession extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
-		request.getSession().setAttribute("size", null);
-		request.getSession().setAttribute("notNumber", null);
-		request.getSession().setAttribute("createcoord", null);
-		request.getSession().setAttribute("fileURLStore", null);
-		request.getSession().setAttribute("setup", null);
-		request.getSession().setAttribute("initprocess", null);
-		request.getRequestDispatcher("postRouter").forward(request, response);
+		GeoJobPropertyStore.loadPropertiesFromFile();
 		
+		if(GeoJobPropertyStore.URL1 != null) {
+			request.setAttribute("url1", GeoJobPropertyStore.URL1);
+		}
+		if(GeoJobPropertyStore.URL2 != null) {
+			request.setAttribute("url2", GeoJobPropertyStore.URL2);
+		}
+		if(GeoJobPropertyStore.URL3 != null) {
+			request.setAttribute("url3", GeoJobPropertyStore.URL3);
+		}
+		if(GeoJobPropertyStore.URL4 != null) {
+			request.setAttribute("url4", GeoJobPropertyStore.URL4);
+		}
+		
+		request.getRequestDispatcher("geosetup.jsp").forward(request, response);
 	}
 
 	

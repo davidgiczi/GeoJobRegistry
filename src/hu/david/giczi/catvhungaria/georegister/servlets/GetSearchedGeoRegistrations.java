@@ -70,7 +70,7 @@ public class GetSearchedGeoRegistrations extends HttpServlet {
 					
 				}
 				
-				if(!HighlightedGeoJob.highlightedGeoJobStore.isEmpty()) {
+				if( !HighlightedGeoJob.highlightedGeoJobStore.isEmpty() ) {
 					HighlightedGeoJob.clearHighlightedGeoJobStore();
 				}
 				

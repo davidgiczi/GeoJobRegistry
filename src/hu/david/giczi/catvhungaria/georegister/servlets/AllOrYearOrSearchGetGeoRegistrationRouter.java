@@ -28,10 +28,10 @@ public class AllOrYearOrSearchGetGeoRegistrationRouter extends HttpServlet {
 
 			String from = (String) request.getSession().getAttribute("requestInstruction");
 			String searching = (String) request.getSession().getAttribute("searchedData");
+			String setup = (String) request.getSession().getAttribute("setup");
 			
 			
-			
-			if (from != null && searching == null) {
+			if (from != null && searching == null && setup == null) {
 
 				if ("all".equals(from)) {
 
@@ -42,9 +42,13 @@ public class AllOrYearOrSearchGetGeoRegistrationRouter extends HttpServlet {
 					request.getRequestDispatcher("getYearRegs").forward(request, response);
 				}
 
-			} else if (searching != null && from == null) {
+			} else if (searching != null && from == null && setup == null) {
 
 				request.getRequestDispatcher("search").forward(request, response);
+			}
+			else if(setup != null && from == null && searching == null) {
+				
+				request.getRequestDispatcher("geosetup.jsp").forward(request, response);
 			}
 			else {
 				request.getRequestDispatcher("geostart.jsp").forward(request, response);
