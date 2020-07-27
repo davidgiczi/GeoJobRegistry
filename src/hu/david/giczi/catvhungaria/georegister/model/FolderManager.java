@@ -6,7 +6,7 @@ import java.io.FilenameFilter;
 public class FolderManager {
 
 	
-	public static final String GEO_PATH = "\\\\10.0.1.74\\Tervezés\\GEO_Dávid\\";
+	public static String GEO_PATH;
 	private String settlementFolderName;
 	private String place_method_date;
 	
@@ -14,10 +14,11 @@ public class FolderManager {
 	
 	public FolderManager(String settlementFolderName, String place_method_date) {
 		
-		this.settlementFolderName = settlementFolderName;
+		FolderManager.GEO_PATH = GeoJobPropertyStore.URL1;
+		this.settlementFolderName = settlementFolderName.replace(" ", "_");
 		this.place_method_date = place_method_date.replace(" ", "_");
 	}
-	
+
 		
 	public String getSettlementFolderName() {
 		return settlementFolderName;

@@ -148,7 +148,7 @@ public class GeoJobDAOImpl implements GeoJobDAO {
 	}
 
 	public void createWorkFolders(String settlement, String place_method_date) {
-
+		
 		FolderManager manager = new FolderManager(settlement, place_method_date);
 		manager.createSettlementFolder();
 		manager.createWorkFolder();

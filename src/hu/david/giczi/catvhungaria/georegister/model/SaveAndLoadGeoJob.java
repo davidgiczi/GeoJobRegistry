@@ -183,7 +183,10 @@ public class SaveAndLoadGeoJob {
 					out.newLine();
 					rowCounter++;
 				}
-
+				
+				
+				Runtime.getRuntime().exec("notepad.exe " + outputFile.getAbsolutePath());
+				
 			} catch (IOException e) {
 
 				e.printStackTrace();
