@@ -4,6 +4,16 @@ document.getElementById("list").addEventListener("click", goGeoList);
 document.getElementById("save").addEventListener("click", goGeoSave);
 document.getElementById("map").addEventListener("click", goGoogleMap);
 document.getElementById("tr").addEventListener("click", goTransformation);
+document.getElementById("calendar").addEventListener("click", openMonth);
+document.getElementById("setup").addEventListener("click", goSetup);
+var pdf = document.getElementById("msg").value;
+
+
+if(pdf !== "") {
+	
+	alert("\"" + pdf +  "\" fájl nem található a beállított mappában.")
+}
+
 
 function goBackToPlanRegister() {
 	
@@ -56,4 +66,14 @@ function goGoogleMap() {
 function goTransformation() {
 	
 	window.open("https://pf-prg.hu/trafo/trafo-4.php");
+}
+
+function openMonth() {
+	
+	document.getElementById("open").submit();
+	
+}
+function goSetup() {
+	
+	document.getElementById("gosetup").submit();
 }
