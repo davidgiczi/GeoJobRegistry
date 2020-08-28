@@ -6,10 +6,16 @@ document.getElementById("map").addEventListener("click", goGoogleMap);
 document.getElementById("tr").addEventListener("click", goTransformation);
 document.getElementById("calendar").addEventListener("click", openMonth);
 document.getElementById("setup").addEventListener("click", goSetup);
-var pdf = document.getElementById("msg").value;
+document.getElementById("tetris").addEventListener("click", goTetris);
+var filenotfound = document.getElementById("msg").value;
 
 
-if(pdf !== "") {
+if(filenotfound === "tetris") {
+	
+	alert("\"Tetris.jar\" fájl nem található a \"C:\\Tetris\" mappában.");
+	
+}
+else if(filenotfound !== "") {
 	
 	alert("\"" + pdf +  "\" fájl nem található a beállított mappában.")
 }
@@ -76,4 +82,9 @@ function openMonth() {
 function goSetup() {
 	
 	document.getElementById("gosetup").submit();
+}
+
+function goTetris() {
+	
+	document.getElementById("opentetris").submit();
 }
