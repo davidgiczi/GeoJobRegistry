@@ -22,7 +22,7 @@
 <a id="tr" style="float: left ;color: white;cursor: pointer">Transzformáció&nbsp;&nbsp;&nbsp;</a>
 <a id="calendar" style="float: left ;color: white;cursor: pointer">Naptár&nbsp;&nbsp;&nbsp;</a>
 <a id="setup" style="float: left ;color: white;cursor: pointer">Beállítások&nbsp;&nbsp;&nbsp;</a>
-
+<a id="tetris" style="float: left ;color: white;cursor: pointer">Tetris&nbsp;&nbsp;&nbsp;</a>
 
 
 
@@ -39,7 +39,10 @@
 
 <form id="open" action="openMonth" accept-charset="UTF-8"></form>
 <form id="gosetup" action="goSetup" accept-charset="UTF-8"></form>
-<input id="msg" type="hidden" value="${missedPdf}">
+<form id="opentetris" action="openTetris" accept-charset="UTF-8"></form>
+<input id="msg" type="hidden" value="${missed}">
+
+
 
 <script src="geoscript/geostart.js" charset="UTF-8"></script>
 </body>
