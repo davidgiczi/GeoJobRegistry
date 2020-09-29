@@ -57,8 +57,7 @@
 	<br>
 	
 	<form method="POST" action="lookup" accept-charset="UTF-8">
-	<h4 style="color: white;">4) Adja meg a számítógépén a pdf fájlok
-		elérési mappáját:</h4>
+	<h4 style="color: white;">4) Adjon meg a számítógépén mentési mappát:</h4>
 	<div style="text-align: center;">
 		<input type="submit" value="Tallózás..." style="cursor: pointer"> 
 		<input type="hidden" value="url4" name="url">
