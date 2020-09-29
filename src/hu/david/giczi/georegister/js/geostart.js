@@ -4,7 +4,7 @@ document.getElementById("list").addEventListener("click", goGeoList);
 document.getElementById("save").addEventListener("click", goGeoSave);
 document.getElementById("map").addEventListener("click", goGoogleMap);
 document.getElementById("tr").addEventListener("click", goTransformation);
-document.getElementById("calendar").addEventListener("click", openMonth);
+document.getElementById("calendar").addEventListener("click", openCalendar);
 document.getElementById("setup").addEventListener("click", goSetup);
 document.getElementById("tetris").addEventListener("click", goTetris);
 var filenotfound = document.getElementById("msg").value;
@@ -74,11 +74,12 @@ function goTransformation() {
 	window.open("https://pf-prg.hu/trafo/trafo-4.php");
 }
 
-function openMonth() {
+function openCalendar() {
 	
-	document.getElementById("open").submit();
+	window.open("http://localhost:8080/Calendar");
 	
 }
+
 function goSetup() {
 	
 	document.getElementById("gosetup").submit();
