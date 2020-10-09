@@ -49,7 +49,8 @@ public class Point {
 				
 				if(standingPoint.id != measuredPointStore.get(j).id &&
 						minDist > getDistance(standingPoint, measuredPointStore.get(j)) &&
-								!standingPointIdStore.contains(measuredPointStore.get(j).id)) {
+								!standingPointIdStore.contains(measuredPointStore.get(j).id) &&
+								standingPoint.id + 1 == measuredPointStore.get(j).id) {
 					
 					minDist = getDistance(standingPoint, measuredPointStore.get(j));
 					standingPointIdStore.add(standingPoint.id);
@@ -82,8 +83,6 @@ public class Point {
 	public String toString() {
 		return "Point [id=" + id + ", x=" + x + ", y=" + y + ", z=" + z + "]";
 	}
-	
-	
 	
 	
 }
