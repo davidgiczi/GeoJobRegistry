@@ -185,28 +185,33 @@ public class MeasuringReport {
 
 		List<Double> z_coords = IntStream.range(0, coords.size()).filter(i -> i % 3 == 2).mapToObj(i -> coords.get(i))
 				.collect(Collectors.toList());
+		
+		List<Point> pointStore = Point.createMeasuredPointStore(x_coords, y_coords, z_coords);
+		
+		double dist = Point.calcDistanceAmongMeasuredPoints(pointStore);
+		
 
-		double maxDist = Math.sqrt(Math.pow(x_coords.get(0) - x_coords.get(1), 2)
-				+ Math.pow(y_coords.get(0) - y_coords.get(1), 2) + Math.pow(z_coords.get(0) - z_coords.get(1), 2));
+//		double maxDist = Math.sqrt(Math.pow(x_coords.get(0) - x_coords.get(1), 2)
+//				+ Math.pow(y_coords.get(0) - y_coords.get(1), 2) + Math.pow(z_coords.get(0) - z_coords.get(1), 2));
+//
+//		for (int i = 0; i < x_coords.size() - 1; i++) {
+//
+//			for (int j = i + 1; j < y_coords.size(); j++) {
+//
+//				if (Math.sqrt(
+//						Math.pow(x_coords.get(i) - x_coords.get(j), 2) + Math.pow(y_coords.get(i) - y_coords.get(j), 2)
+//								+ Math.pow(z_coords.get(i) - z_coords.get(j), 2)) > maxDist) {
+//
+//					maxDist = Math.sqrt(Math.pow(x_coords.get(i) - x_coords.get(j), 2)
+//							+ Math.pow(y_coords.get(i) - y_coords.get(j), 2)
+//							+ Math.pow(z_coords.get(i) - z_coords.get(j), 2));
+//
+//				}
+//			}
+//
+//		}
 
-		for (int i = 0; i < x_coords.size() - 1; i++) {
-
-			for (int j = i + 1; j < y_coords.size(); j++) {
-
-				if (Math.sqrt(
-						Math.pow(x_coords.get(i) - x_coords.get(j), 2) + Math.pow(y_coords.get(i) - y_coords.get(j), 2)
-								+ Math.pow(z_coords.get(i) - z_coords.get(j), 2)) > maxDist) {
-
-					maxDist = Math.sqrt(Math.pow(x_coords.get(i) - x_coords.get(j), 2)
-							+ Math.pow(y_coords.get(i) - y_coords.get(j), 2)
-							+ Math.pow(z_coords.get(i) - z_coords.get(j), 2));
-
-				}
-			}
-
-		}
-
-		return String.format("%.2f", maxDist);
+		return String.format("%.2f", dist);
 	}
 
 	public static Boolean createCoordReport(String root, String settlementNameOfWork, String place_method_date) {
